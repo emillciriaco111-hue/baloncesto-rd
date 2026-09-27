@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #e87521 #1d3557;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f3f6;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #14213d, #1d3557);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 18px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e87521;
+}
+
+.encabezado {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.encabezado h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #e87521
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.encabezado p {
+    font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.boton-inicio {
+    display: inline-block;
+    background-color: #e87521;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-inicio:hover {
+    background-color: #c95d10;
+    transform: translateY(-2px);
+}
+
+/* CONTENIDO */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* TARJETAS */
+
+.tarjeta {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.icono {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.tarjeta h2 {
+    color: #1d3557;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* SECCIÓN GRANDE */
+
+.seccion-grande {
+    grid-column: 1 / -1;
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 6px solid #e87521;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.seccion-grande h2 {
+    color: #1d3557;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.seccion-grande > p {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* JUGADORES */
+
+.jugadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.jugador {
+    background-color: #f5f6f8;
+    padding: 22px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.jugador span {
+    font-size: 35px;
+}
+
+.jugador h3 {
+    color: #1d3557;
+    margin: 10px 0;
+}
+
+/* ESTADÍSTICAS */
+
+.estadisticas {
+    grid-column: 1 / -1;
+    background-color: #1d3557;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.estadisticas h2 {
+    margin-bottom: 30px;
+}
+
+.contenedor-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contenedor-estadisticas div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenedor-estadisticas strong {
+    display: block;
+    font-size: 40px;
+    color: #e87521;
+}
+
+.contenedor-estadisticas span {
+    font-size: 14px;
+}
+
+/* BALÓN */
+
+.visual {
+    grid-column: span 2;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.visual h2 {
+    color: #1d3557;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.visual p {
+    color: #444;
+}
+
+.balon {
+    width: 130px;
+    height: 130px;
+    background-color: #e87521;
+    border: 4px solid #222;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.linea {
+    position: absolute;
+    background-color: #222;
+}
+
+.linea1 {
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.linea2 {
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.linea3 {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #222;
+    background-color: transparent;
+    border-radius: 50%;
+    left: -65px;
+    top: 2px;
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.beneficios h2 {
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+.lista-beneficios {
+    display: grid;
+    gap: 15px;
+}
+
+.lista-beneficios div {
+    background-color: #f5f6f8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.lista-beneficios span {
+    font-size: 28px;
+}
+
+.lista-beneficios h3 {
+    color: #1d3557;
+}
+
+/* INTERACTIVO */
+
+.interactivo {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1d3557, #14213d);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.interactivo h2 {
+    margin-bottom: 15px;
+}
+
+.interactivo p {
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+
+button {
+    background-color: #e87521;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #c95d10;
+    transform: translateY(-2px);
+}
+
+button:focus {
+    outline: 3px solid rgba(232, 117, 33, 0.35);
+    outline-offset: 3px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #151f2e;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer h3 {
+    margin-bottom: 8px;
+}
+
+.autor {
+    color: #cccccc;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d3557;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e87521;
+    border-radius: 10px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .visual {
+        grid-column: span 1;
+    }
+
+    .jugadores {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .encabezado {
+        padding: 50px 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 29px;
+    }
+
+    .encabezado p {
+        font-size: 15px;
+    }
+
+    main {
+        width: 92%;
+        grid-template-columns: 1fr;
+        margin: 25px auto;
+    }
+
+    .visual {
+        grid-column: span 1;
+    }
+
+    .tarjeta,
+    .visual,
+    .interactivo,
+    .seccion-grande,
+    .beneficios {
+        padding: 22px;
+    }
+
+    .balon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .contenedor-estadisticas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
