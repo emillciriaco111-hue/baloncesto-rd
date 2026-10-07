@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sistema de Ponche de Pasantía</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <main class="contenedor">
+
+
+        <!-- ENCABEZADO -->
+
+        <section class="encabezado">
+
+            <div class="encabezado-info">
+
+                <p class="subtitulo">
+                    CONTROL DE ASISTENCIA
+                </p>
+
+                <h1>
+                    Sistema de Ponche de Pasantía
+                </h1>
+
+                <p class="descripcion">
+                    Registro de entrada y salida de estudiantes en pasantía.
+                </p>
+
+            </div>
+
+
+            <div class="reloj-contenedor">
+
+                <span id="fecha">
+                    Fecha
+                </span>
+
+                <strong id="reloj">
+                    00:00:00
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FORMULARIO -->
+
+        <section class="tarjeta">
+
+            <div class="formulario-grid">
+
+
+                <!-- NOMBRE -->
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        👤 Nombre del estudiante
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Escribe tu nombre completo"
+                    >
+
+                </div>
+
+
+
+                <!-- EMPRESA -->
+
+                <div class="campo">
+
+                    <label for="lugar">
+                        🏢 Lugar de pasantía
+                    </label>
+
+                    <select id="lugar">
+
+                        <option value="">
+                            Selecciona tu lugar de pasantía
+                        </option>
+
+                        <option value="CINCINNATUS">
+                            🏢 CINCINNATUS
+                        </option>
+
+                        <option value="INSTITUTO DE CONTADORES PÚBLICOS">
+                            📊 INSTITUTO DE CONTADORES PÚBLICOS
+                        </option>
+
+                        <option value="DIGESETT">
+                            🚦 DIGESETT
+                        </option>
+
+                        <option value="SUPERMERCADO 100%">
+                            🛒 SUPERMERCADO 100%
+                        </option>
+
+                        <option value="CLÍNICA CORAZONES UNIDOS">
+                            ❤️ CLÍNICA CORAZONES UNIDOS
+                        </option>
+
+                        <option value="CEDIEN">
+                            🏥 CEDIEN
+                        </option>
+
+                        <option value="GRUPO CASSIMMIT SRL">
+                            🏢 GRUPO CASSIMMIT SRL
+                        </option>
+
+                        <option value="UASD">
+                            🎓 UASD
+                        </option>
+
+                        <option value="SHADDAI AUTOTÉCNICA">
+                            🚗 SHADDAI AUTOTÉCNICA
+                        </option>
+
+                        <option value="MINISTERIO DE SALUD PÚBLICA">
+                            🏥 MINISTERIO DE SALUD PÚBLICA
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ESTADO -->
+
+            <div class="estado-contenedor">
+
+                <span>
+                    Estado del pasante:
+                </span>
+
+                <strong
+                    id="estado"
+                    class="estado fuera"
+                >
+                    FUERA
+                </strong>
+
+            </div>
+
+
+
+            <!-- BOTONES -->
+
+            <div class="botones">
+
+                <button
+                    id="btnEntrada"
+                    class="btn entrada"
+                >
+                    🟢 Ponchar Entrada
+                </button>
+
+
+                <button
+                    id="btnSalida"
+                    class="btn salida"
+                    disabled
+                >
+                    🔴 Ponchar Salida
+                </button>
+
+            </div>
+
+
+            <p
+                id="mensaje"
+                class="mensaje"
+            ></p>
+
+        </section>
+
+
+
+        <!-- RESUMEN -->
+
+        <section class="resumen">
+
+
+            <article class="caja">
+
+                <div class="icono-resumen">
+                    🟢
+                </div>
+
+                <p>
+                    Última entrada
+                </p>
+
+                <h2 id="ultimaEntrada">
+                    --:--
+                </h2>
+
+            </article>
+
+
+
+            <article class="caja">
+
+                <div class="icono-resumen">
+                    🔴
+                </div>
+
+                <p>
+                    Última salida
+                </p>
+
+                <h2 id="ultimaSalida">
+                    --:--
+                </h2>
+
+            </article>
+
+
+
+            <article class="caja">
+
+                <div class="icono-resumen">
+                    ⏱️
+                </div>
+
+                <p>
+                    Tiempo realizado
+                </p>
+
+                <h2 id="tiempoTrabajado">
+                    0h 00m
+                </h2>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- HISTORIAL -->
+
+        <section class="historial">
+
+
+            <div class="historial-cabecera">
+
+                <div>
+
+                    <p class="subtitulo oscuro">
+                        REGISTROS
+                    </p>
+
+                    <h2>
+                        Historial de Ponches
+                    </h2>
+
+                    <p class="texto-historial">
+                        Los registros se muestran aquí mientras la página esté abierta.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="btnLimpiar"
+                    class="btn-limpiar"
+                >
+                    🗑️ Limpiar historial
+                </button>
+
+            </div>
+
+
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Estudiante
+                            </th>
+
+                            <th>
+                                Lugar
+                            </th>
+
+                            <th>
+                                Fecha
+                            </th>
+
+                            <th>
+                                Entrada
+                            </th>
+
+                            <th>
+                                Salida
+                            </th>
+
+                            <th>
+                                Tiempo
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabla">
+
+                        <tr class="fila-vacia">
+
+                            <td colspan="6">
+
+                                No hay registros todavía.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PIE -->
+
+        <footer class="footer">
+
+            <p>
+                Sistema de Control de Asistencia de Pasantía
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
